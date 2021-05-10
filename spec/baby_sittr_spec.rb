@@ -6,4 +6,12 @@ RSpec.describe BabySittr do
         expect(baby_sitter).to be_truthy
     end
 
+    describe '#valid?' do
+        context 'starts no earlier than 5:00PM' do
+            it 'returns true if start time is 5PM' do
+                result = BabySittr.new(start_time: '5PM', end_time: '6PM').valid?
+                expect(result).to be_truthy
+            end
+        end
+    end
 end
