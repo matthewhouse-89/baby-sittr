@@ -5,6 +5,7 @@ class BabySittr
     end
 
     def valid?
-        @start_time == '5PM'
+        valid_period = ['5PM','6PM', '7PM', '8PM', '9PM', '10PM', '11PM', '12AM', '1AM', '2AM', '3AM', '4AM']
+        valid_period.include?(@start_time)
     end
 end
