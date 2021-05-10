@@ -17,6 +17,16 @@ RSpec.describe BabySittr do
                 result = BabySittr.new(start_time: '6PM', end_time: '7PM').valid?
                 expect(result).to be_truthy
             end
+
+            it 'returns false if start time is 4PM' do
+                result = BabySittr.new(start_time: '4PM', end_time: '6PM').valid?
+                expect(result).to be_falsey
+            end
+
+            it 'returns true if start time is 3PM' do
+                result = BabySittr.new(start_time: '3PM', end_time: '7PM').valid?
+                expect(result).to be_falsey
+            end
         end
     end
 end
