@@ -16,9 +16,14 @@ class BabySittr
         total = 0
         work_period = @@valid_period.slice(@@valid_period.index(@start_time)..@@valid_period.index(@end_time))
         bedtime_index = work_period.index(@bed_time)
+        midnight_index = work_period.index('12AM') || -1
     
         work_period.each_with_index do |time, index|
             if index < work_period.size - 1
+                if index <= (midnight_index - 1)
+                    pay_per_hour = 8
+                end
+
                 total += pay_per_hour
             end
         end
