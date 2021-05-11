@@ -81,5 +81,12 @@ RSpec.describe BabySittr do
                 expect(result).to eq('$16')
             end
         end
+
+        context 'gets paid $16/hour from midnight to end of job' do
+            it 'returns $16 for a start of 12AM bedtime of 12AM and and end of 1AM' do
+                result = BabySittr.new(start_time: '12AM', bed_time: '12AM', end_time: '1AM').calculate_pay
+                expect(result).to eq('$16')
+            end
+        end
     end
 end

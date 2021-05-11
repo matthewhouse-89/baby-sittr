@@ -23,7 +23,6 @@ class BabySittr
                 if index <= (midnight_index - 1)
                     pay_per_hour = 8
                 end
-
                 total += pay_per_hour
             end
         end
